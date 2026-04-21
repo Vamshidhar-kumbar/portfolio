@@ -442,6 +442,44 @@ footer{text-align:center;padding:20px;background:#020617}
     max-width: 100%;
   }
 }
+
+/* HAMBURGER MENU */
+.menu-toggle {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+
+  .menu-toggle {
+    display: block;
+    color: #38bdf8;
+  }
+
+  .navbar {
+    padding: 15px 5%;
+  }
+
+  .navbar ul {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background: #020617;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 0;
+
+    display: none;   /* hide by default */
+  }
+
+  .navbar ul.active {
+    display: flex;   /* show when clicked */
+  }
+}
 </style>
 
 </head>
@@ -452,7 +490,12 @@ footer{text-align:center;padding:20px;background:#020617}
 
 <nav class="navbar">
   <div class="logo">Portfolio</div>
-  <ul>
+
+  <div class="menu-toggle" id="menu-toggle">
+    <i class="fas fa-bars"></i>
+  </div>
+
+  <ul id="nav-links">
     <li><a href="#">Home</a></li>
     <li><a href="#about">About</a></li>
     <li><a href="#education">Education</a></li>
@@ -817,6 +860,19 @@ const formData = new FormData(this);
   })
   .catch(() => {
     alert("Error sending message ❌");
+  });
+});
+
+const toggle = document.getElementById("menu-toggle");
+const navLinks = document.getElementById("nav-links");
+
+toggle.addEventListener("click", () => {
+  navLinks.classList.toggle("active");
+});
+
+document.querySelectorAll("#nav-links a").forEach(link => {
+  link.addEventListener("click", () => {
+    navLinks.classList.remove("active");
   });
 });
 
