@@ -213,12 +213,65 @@ h2{text-align:center;margin-bottom:40px;font-size:2rem}
  color:#94a3b8;
 }
 
-/* Grid */
-.skills-container{
- display:grid;
- grid-template-columns: repeat(5, 1fr);
- gap:25px;
- justify-items:center;  /* centers cards */
+
+/* ================= MOBILE RESPONSIVE FIXES ================= */
+
+@media (max-width: 768px) {
+
+  .navbar {
+    flex-direction: column;
+    padding: 10px 5%;
+  }
+
+  .navbar ul {
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 10px;
+    align-items: center;
+  }
+
+  .navbar a {
+    font-size: 16px;
+  }
+
+  header h1 {
+    font-size: 2rem;
+  }
+
+  header h2 {
+    font-size: 1.5rem;
+  }
+
+  .profile-pic {
+    width: 150px;
+    height: 150px;
+  }
+
+  section {
+    padding: 60px 5%;
+  }
+
+  .card img {
+    height: 150px;
+  }
+
+  form {
+    width: 100%;
+    padding: 0 10px;
+  }
+
+  .social-icons a {
+    font-size: 22px;
+    margin: 0 10px;
+  }
+}
+
+
+/* FIX SKILLS GRID (replace your old one) */
+.skills-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 15px;
 }
 
 /* Card */
@@ -426,6 +479,10 @@ footer{text-align:center;padding:20px;background:#020617}
 
   <a href="https://github.com/Vamshidhar-kumbar" target="_blank">
     <i class="fab fa-github"></i>
+  </a>
+
+  <a href="https://wa.me/919480544576" target="_blank">
+    <i class="fab fa-whatsapp"></i>
   </a>
 
   <a href="https://www.instagram.com/vamshidhar_kumbar" target="_blank">
@@ -669,6 +726,7 @@ dynamic organization.
       <div class="footer-social">
         <a href="https://www.linkedin.com/in/vamshidhar-kumbar-00a8ba320/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BKJprqNA6RHqkyikyn4j25Q%3D%3D" target="_blank"><i class="fab fa-linkedin"></i></a>
         <a href="https://github.com/Vamshidhar-kumbar" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://wa.me/919480544576" target="_blank"><i class="fab fa-whatsapp"></i></a>
         <a href="https://www.instagram.com/vamshidhar_kumbar" target="_blank"><i class="fab fa-instagram"></i></a>
       </div>
 
